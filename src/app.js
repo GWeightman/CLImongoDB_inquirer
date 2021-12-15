@@ -1,5 +1,6 @@
 const inquirer = require("inquirer")
 const Movies = require("./pages/movies")
+const TV = require("./pages/tv")
 
 
 const app = async () => {
@@ -15,6 +16,9 @@ const app = async () => {
         .then((answers) => {
             if (answers.lists == "Movies"){
                 Movies()
+            }
+            else if (answers.lists == "TV") {
+                TV()
             }
         })
 }
