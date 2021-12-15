@@ -1,6 +1,7 @@
 const inquirer = require("inquirer")
 const Movies = require("./pages/movies")
 const TV = require("./pages/tv")
+const Game = require("./pages/game")
 
 
 const app = async () => {
@@ -10,7 +11,7 @@ const app = async () => {
                 type: "list",
                 name: "lists",
                 message: `Which list would you like to enter`,
-                choices: ["Movies", "TV", "Anime", "Game", "Books", "Graphic Novels"],
+                choices: ["Movies", "TV", "Game", "Books", "Graphic Novels"],
             },
         ])
         .then((answers) => {
@@ -19,6 +20,9 @@ const app = async () => {
             }
             else if (answers.lists == "TV") {
                 TV()
+            }
+            else if (answers.lists == "Game") {
+                Game()
             }
         })
 }
